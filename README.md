@@ -2,7 +2,7 @@
 
 This repository contains my study notes for preparing the AWS SAA Exam. The structure is corresponding to the Udemy course: *Ultimate AWS Certified Solutions Architect Associate 2020*.
 
-- [AWS Fundamentals: IAM & EC2](./AWS_Fundamentals__IAM_&_EC2.ms)
+- [AWS Fundamentals: IAM & EC2](./AWS_Fundamentals__IAM_and_EC2.md)
 - High Availability and Scalability: ELB & ASG
 - EC2 Storage - EBS & EFS
 - AWS Fundamentals: RDS + Aurora + ElastiCache
