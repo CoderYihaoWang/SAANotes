@@ -14,9 +14,9 @@
 - Identity and Access Management
 - has a global view
 - Never use root account, never write credentials in code
-- Users: usually a physical person, one per person
-- Groups: contains users
-- Roles: internal usage within AWS resource, for machines, one per app
+- **Users**: usually a physical person, one per person
+- **Groups**: contains users
+- **Roles**: internal usage within AWS resource, for machines, one per app
 - Policies are in JSON, has redefined managed policies
 - Best to give users the minimal amount of permissions (least privilege principle)
 - Identity Federation uses the SAML standard
