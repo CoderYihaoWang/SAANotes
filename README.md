@@ -6,7 +6,7 @@ This repository contains my study notes for preparing the AWS SAA Exam. The stru
 - [High Availability and Scalability: ELB & ASG](./High_Availability_and_Scalability__ELB_and_ASG.md)
 - [EC2 Storage - EBS & EFS](./EC2_Storage__EBS_and_EFS.md)
 - [AWS Fundamentals: RDS + Aurora + ElastiCache](./AWS_Fundamentals__RDS_Aurora_ElastiCache.md)
-- Route 53
+- [Route 53](./Route_53.md)
 - Classic Solutions Architecture Discussions
 - Amazon S3 Introduction
 - AWS CLI, SDK, IAM Roles & Policies
