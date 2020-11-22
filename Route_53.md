@@ -1,2 +1,52 @@
 # Route 53
 
+- A managed DNS - a collection of rules and records which helps clients understand how to reach a server through its domain name
+- Can be public or private
+- TTL: time to live in cache, mandatory for each record
+- Common records:
+  - A: hostname to IPv4
+  - AAAA: hostname to IPv6
+  - CNAME: hostname to hostname
+  - Alias: hostname to AWS resource
+- CNAME vs Alias
+  - CNAME only for non-domain
+  - Alias only for AWS resource, can be root
+  - Alias free of charge and has native health check
+
+- Health checks
+  - have x health checks failed => unhealthy (default 3)
+  - after x health checks passed => healthy (default 3)
+  - default interval 30s
+  - about 15 health checkers will check the endpoint health => one request every 2 seconds on average
+  - can have HTTP, TCP, HTTPS, no SSL
+  - can integrate with CloudWatch
+  - can be linked to Route53 DNS queries
+
+- Routing policies
+  - Simple
+    - no health check
+    - multiple values possible
+    - client-side load balancing
+  - Weighted
+    - controls the percentage of requests that go to  specific endpoint
+    - helpful in testing
+    - can be associated with health check
+  - Latency
+    - redirect to the server that has the lease latency close to up
+    - helpful when latency of users is a priority
+    - latency evaluated in terms of user to designated AWS region
+  - Failover
+    - failover when the primary fails the health check
+    - only one primary and one secondary
+    - primary has mandatory health check
+  - Geolocation
+    - based on user location
+    - need to specify a default policy
+    - for compliance requirements
+  - Multi Value
+    - routes traffic to multiple resources
+    - can associate with Route53 health checks
+    - up to 8 healthy records are returned for each multi value query
+- Third party domains
+  - create a hosted zone in Route 53
+  - update NS records on third party website to use Route53 name servers
