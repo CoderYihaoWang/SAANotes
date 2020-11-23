@@ -7,7 +7,7 @@ This repository contains my study notes for preparing the AWS SAA Exam. The stru
 - [EC2 Storage - EBS & EFS](./EC2_Storage__EBS_and_EFS.md)
 - [AWS Fundamentals: RDS + Aurora + ElastiCache](./AWS_Fundamentals__RDS_Aurora_ElastiCache.md)
 - [Route 53](./Route_53.md)
-- Amazon S3 Introduction
+- [Amazon S3 Introduction](./Amazon_S3_Introduction.md)
 - AWS CLI, SDK, IAM Roles & Policies
 - Advanced Amazon S3 & Athena
 - CloudFront & AWS Global Accelerator
