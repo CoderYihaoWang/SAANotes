@@ -1,2 +1,71 @@
 # Amazon S3 Introduction
 
+- Infinitely scaling storage
+- Buckets
+  - S3 stores objects (files) in buckets (directories)
+  - must have a globally unique name
+  - at the region level
+  - naming convention
+    - no uppercase
+    - no underscore
+    - 3-63 characters long
+    - not an ip
+    - must start with lowercase letter or number
+- Objects
+  - have a key, which is the full path = prefix + object name
+  - value is the content
+  - max size 5T
+  - if uploading more than 5G, must use multipart upload
+- Versioning
+  - enabled at the bucket level
+  - same key overwrite will increment the version
+  - any file that is not versioned prior to enabling versioning will have the version null
+  - suspending versioning does not delete existing versions
+- Encryption
+  - SSE-S3
+    - encrypts S3 objects using keys handled and managed by AWS
+    - server side encryption using AES-256
+    - must set header "x-amz-server-side-encryption":"AES256"
+  -  SSE-KMS
+    - leverage AWS Key Management Service to manage encryption keys
+    - user control + audit trail
+    - must set header "x-amz-server-side-encryption":"aws:kms"
+  - SSE-C
+    - manage own encryption keys outside of AWS
+    - must use HTTPS
+    - encryption key must provided in HTTP headers, for every HTTP request made
+  - Client side encryption
+- Security
+  - User based - IAM policies
+  - Resource based
+    - bucket policies - bucket wide rules from the console
+    - Object access control list (ACL)
+    - Bucket access control list (ACL)
+  - an IAM principal can access an S3 object if: the user IAM permissions allow it OR the resource policy allows it AND not explicit deny
+  - Networking - supports VPC Endpoints
+  - Logging and audit: S3 Access logs an be stored in other S3 bucket, API calls can be logged in AWS Cloudtrail
+  - User security: MFA delete can be required in versioned buckets
+  - Pre-signed URLs: URLs that are valid only for a limited time (eg premium video service for logged in users)
+- Bucket policies
+  - JSON based
+    - Resources: buckets and objects
+    - Actions: set of API to allow or deny
+    - Effect: allow or deny
+    - Principal: the account or user to apply the policy to
+  - Block public access settings to prevent company data leaks
+- Websites
+  - can host static website
+  - remove encryption policies
+  - choose static website hosting in properties
+  - disable block public access
+  - create bucket policy to allow public access
+- CORS
+  - origin: scheme + host + port
+  - if a client does a cross-origin request on S3, need to enable the correct CORS headers
+  - can allow for a specific origin  or for *
+- Consistency model
+  - read after write consistency for PUT of new objects
+  - except GET - PUT - GET
+  - eventual consistency for DELETE and PUT of existing objects
+  - no way to enforce strong consistency
+
