@@ -9,7 +9,7 @@ This repository contains my study notes for preparing the AWS SAA Exam. The stru
 - [Route 53](./Route_53.md)
 - [Amazon S3 Introduction](./Amazon_S3_Introduction.md)
 - [AWS CLI, SDK, IAM Roles & Policies](./AWS_CLI_SDK_IAM_Roles_and_Policies.md)
-- Advanced Amazon S3 & Athena
+- [Advanced Amazon S3 & Athena](./Advanced_Amazon_S3_and_Athena.md)
 - CloudFront & AWS Global Accelerator
 - AWS Storage Extras
 - Decoupling applications: SQS, SNS, Kinesis, Active MQ
