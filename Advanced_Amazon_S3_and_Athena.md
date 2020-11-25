@@ -1,2 +1,77 @@
 # Advanced Amazon S3 and Athena
 
+- MFA delete
+  - must first enable versioning
+  - need MFA to permanently delete an object version, or suspend versioning on the bucket
+  - won't need MFA for enabling versioning or listing deleted versions
+  - only the owner can enable/disable, only with CLI
+- Default encryption
+  - tick and done
+  - bucket policies are evaluated first
+- S3 access logs
+  - do not set logging bucket to be the monitored bucket
+- S3 replication
+  - must enable versioning
+  - can be in different accounts
+  - async
+  - must give proper IAM permissions to S3
+  - Cross Region Replication (CRR): for compliance, lower latency access, replication across accounts
+  - Single Region Replication (SRR): log aggregation, live replication between production an test accounts
+  - not retroactive
+  - Any DELETE are not replicated
+  - no chaining
+- Pre-signed URLs
+  - for downloads can use CLI
+  - for uploads must use SDK
+  - valid for 1 hour
+  - give a pre-signed URL inherit the permissions of the person who generated the URL for GET/PUT
+- Storage tiers
+  - Amazon S3 Standard - general purpose
+    - Big data, mobile & gaming apps, content distribution...
+  - Amazon S3 Standard - Infrequent Access (IA)
+    - less frequent, but requires rapid access
+    - lower cost than general purpose
+    - disaster recovery, backups
+  - Amazon S3 One Zone - Infrequent Access
+    - single AZ
+    - lower cost than IA
+    - secondary backup, or data that can be recreated
+  - Amazon S3 Intelligent Tiering
+    - auto moves object between two access tiers
+    - monthly monitoring fees
+  - Amazon Glacier
+    - low cost, for backup
+    - three retrieval options:
+      - expedited (1 - 5 minutes)
+      - standard (3 - 5 hours)
+      - bulk (5 - 12 hours)
+    - minimum storage duration of 90 days
+  - Amazon Glacier Deep Archive
+    - standard (12 hours)
+    - bulk (48 hours)
+    - minimum storage duration of 180 days
+  - Amazon S3 Reduced Redundancy Storage (deprecated)
+- Lifecycle policies
+  - transition actions: defines when objects are transitioned to another storage class
+  - expiration actions: delete files or versions after some time, can delete incomplete multipart uploads
+  - rules can be created for a certain prefix / tags
+- S3 performance
+  - multipart upload, recommended for files > 100M, must use for file > 5G
+  - S3 transfer acceleration (upload only): increase transfer speed by transferring file to an AWS edge location which will forward the data to the S3 bucket in the target region, compatible with multipart upload
+  - Byte-range fetches, requesting specific byte ranges in parallel
+- S3 select & Glacier select
+  - retrieve less data using SQL by performing server side filtering
+  - can filter by rows and columns, simple SQL statements
+  - less network transfer, less CPU cost client-side
+- S3 event notifications
+  - eg generate thumbnails of images uploaded to S3
+  - SNS, SQS, Lambda
+  - enable versioning
+- Athena
+  - perform analytics directly against S3 files
+  - use SQL to query the files
+  - charge per query and amount of data scanned
+  - supports CSV, JSON...
+  - analyse data directly on S3 => Athena
+- S3 lock policies & Glacier vault lock
+  - adopt a WORM model
