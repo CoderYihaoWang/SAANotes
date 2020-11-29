@@ -12,9 +12,8 @@ This repository contains my study notes for preparing the AWS SAA Exam. The stru
 - [Advanced Amazon S3 & Athena](./Advanced_Amazon_S3_and_Athena.md)
 - [CloudFront & AWS Global Accelerator](./CloudFront_and_AWS_Global_Accelerator.md)
 - [AWS Storage Extras](./AWS_Storage_Extras.md)
-- Decoupling applications: SQS, SNS, Kinesis, Active MQ
-- Serverless Overviews from a Solution Architect Perspective
-- Serverless Solution Architecture Discussions
+- [Decoupling applications: SQS, SNS, Kinesis, Active MQ](./Decoupling_Applications__SQS_SNS_Kinesis_Active_MQ.md)
+- [Serverless Overviews from a Solution Architect Perspective](./Serverless_Overviews_from_a_Solution_Architect_Perspective.md)
 - Database in AWS
 - AWS Monitoring & Audit: CloudWatch, CloudTrial & Config
 - Identity and Access Management (IAM) - Advanced
