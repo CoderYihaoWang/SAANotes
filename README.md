@@ -14,7 +14,7 @@ This repository contains my study notes for preparing the AWS SAA Exam. The stru
 - [AWS Storage Extras](./AWS_Storage_Extras.md)
 - [Decoupling applications: SQS, SNS, Kinesis, Active MQ](./Decoupling_Applications__SQS_SNS_Kinesis_Active_MQ.md)
 - [Serverless Overviews from a Solution Architect Perspective](./Serverless_Overviews_from_a_Solution_Architect_Perspective.md)
-- [Database in AWS](./Database_in_AWS.md)
+- [Databases in AWS](./Databases_in_AWS.md)
 - [AWS Monitoring & Audit: CloudWatch, CloudTrail & Config](./AWS_Monitoring_and_Audit__CloudWatch_CloudTrail_and_Config.md)
 - [Identity and Access Management (IAM) - Advanced](./Identity_and_Access_Management_IAM_Advanced.md)
 - AWS Security & Encryption: KMS, SSM Parameter Store, CloudHSM, Shield, WAF
